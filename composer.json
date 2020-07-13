@@ -12,5 +12,14 @@
             "homepage": "http://github.com/tkeske",
             "role": "Developer"
         }
-    ]
+    ],
+    "require": {
+        "php": ">=7.0",
+        "curl/curl": "^*"
+    },
+    "autoload": {
+        "psr-0": {
+          "Curl": "src/"
+        }
+    }
 }
