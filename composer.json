@@ -1,0 +1,16 @@
+{
+    "name": "tkeske/PHP-Integromat-Wrapper",
+    "type": "library",
+    "description": "PHP library (wrapper) around Integromat`s API",
+    "keywords": ["php","inetgromat","library"],
+    "homepage": "https://github.com/tkeske",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tomáš Keske",
+            "email": "tomas.keske@post.cz",
+            "homepage": "http://github.com/tkeske",
+            "role": "Developer"
+        }
+    ]
+}
