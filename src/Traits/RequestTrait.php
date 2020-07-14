@@ -1,13 +1,9 @@
 <?php
 
-namespace Traits;
-
-require 'vendor/autoload.php';
+namespace Integromat\Traits;
 
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Client;
-use Psr\Http\Message\ResponseInterface;
-use GuzzleHttp\Exception\RequestException;
 
 trait RequestTrait {
 
@@ -32,31 +28,17 @@ trait RequestTrait {
 
     public function sendRequest($type, $url, $contentType, $data) {
 
-        $client = new Client([
-            'base_uri' => 'https://api.integromat.com/v1',
-
-        ]);
-
         if ($type == "POST")
 
             $this->setContentTypeHeader($contentType);
-            
 
-        $request = new Request($type, $url, $this->headers, $data);
-    
-        $promise = $client->sendAsync($request);
 
-        $response = null;
+        $request = new Request($type, 'https://api.integromat.com/v1' . $url, $this->headers, json_encode($data));
 
-        $promise->then(
-            function (ResponseInterface $res) use ($response) {
-                $response = $res->getBody()->getContents();
-            },
-            function (RequestException $e) {
-                var_dump($e);
-                die();
-            }
-        );
+        $client = new Client();
+        $promise = $client->send($request);
+
+        $response = $promise->getBody()->getContents();
 
         return $response;
     }

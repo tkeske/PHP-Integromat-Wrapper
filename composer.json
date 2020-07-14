@@ -2,7 +2,7 @@
     "name": "tkeske/php-integromat-wrapper",
     "type": "library",
     "description": "PHP library (wrapper) around Integromat`s API",
-    "keywords": ["php","inetgromat","library"],
+    "keywords": ["php","inetgromat","library", "Laravel"],
     "homepage": "https://github.com/tkeske",
     "license": "MIT",
     "authors": [
@@ -16,11 +16,12 @@
     "require": {
         "php": ">=7.0",
         "ext-curl": "*",
-        "guzzlehttp/guzzle": "^7.0"
+        "guzzlehttp/guzzle": "*",
+        "laravel/framework": "*"
     },
     "autoload": {
-        "psr-0": {
-          "Curl": "src/"
+        "psr-4": {
+            "Integromat\\": "src/"
         }
     }
 }

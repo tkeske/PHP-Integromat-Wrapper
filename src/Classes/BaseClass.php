@@ -1,6 +1,6 @@
 <?php
 
-namespace Classes;
+namespace Integromat\Classes;
 
 class BaseClass {
 
@@ -27,9 +27,9 @@ class BaseClass {
     }
 
     private function readEnv() {
-        
+
         $_ENV = array();
-        $handle = fopen("../../../.env", "r");
+        $handle = fopen("../.env", "r");
 
         if($handle) {
             while (($line = fgets($handle)) !== false) {
@@ -44,5 +44,5 @@ class BaseClass {
 
         } else { die('error opening .env'); }
     }
-    
+
 }
