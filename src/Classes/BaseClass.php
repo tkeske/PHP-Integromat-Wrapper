@@ -6,7 +6,7 @@ class BaseClass {
 
     protected $apiKey;
 
-    protected $sdkVersion = "integromatPHP-0.1";
+    protected $sdkVersion = "5.0.0";
 
     public function getSDKVersion() {
         return $this->sdkVersion;

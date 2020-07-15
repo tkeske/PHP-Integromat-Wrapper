@@ -18,5 +18,4 @@ class Webhook extends BaseClass {
 
         return $response;
     }
-
 }

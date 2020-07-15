@@ -31,8 +31,7 @@ trait RequestTrait {
         if ($type == "POST")
 
             $this->setContentTypeHeader($contentType);
-
-
+            
         $request = new Request($type, 'https://api.integromat.com/v1' . $url, $this->headers, json_encode($data));
 
         $client = new Client();
